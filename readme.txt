@@ -4,7 +4,7 @@ Donate link:       http://vendocr.at/donate/
 Tags:              woocommerce, credit card, logo, payment
 Requires at least: 3.5
 Tested up to:      4.1
-Stable tag:        0.1.1
+Stable tag:        0.1.2
 License:           GNU General Public License v3.0
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 
