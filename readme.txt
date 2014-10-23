@@ -4,7 +4,7 @@ Donate link:       http://vendocr.at/donate/
 Tags:              woocommerce, credit card, logo, payment
 Requires at least: 3.5
 Tested up to:      4.1
-Stable tag:        0.2.1
+Stable tag:        0.3.0
 License:           GNU General Public License v3.0
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -40,7 +40,7 @@ Please contact us via [Twitter](https://twitter.com/vendocrat) or hit us on [Git
 
 1. Upload 'woocommerce-payment-methods' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Display your accepted methods via: Shortcode [v_woo_payment_methods], Widget or template tag '<?php v_woo_payment_methods(); ?>.
+3. Display your accepted methods via: Shortcode [wc_payment_methods], Widget or template tag '<?php wc_payment_methods(); ?>.
 4. Done!
 
 == Frequently Asked Questions ==
@@ -53,6 +53,7 @@ Miss some payment methods? Let me have a look at it by opening an issue on <a hr
 
 1. Shortcode output (top-down: default, inverse, outline style)
 2. Widgets (top-down: default, inverse, outline style)
+3. WooCommerce Checkout
 
 == Changelog ==
 
@@ -70,3 +71,9 @@ Now using PaymentFont to display brand icons. Fixed textdomain issue plus some m
 
 = 0.2.1 =
 Fixed typo.
+
+= 0.2.2 =
+Added CSS to replace payment provider images on WooCommerce Checkout with PaymentFont icons (see screenshots).
+
+= 0.3.0 =
+Improved payment gateway function. Partial rewrite to fit our internal plugin standard. Improved l10n handling.
