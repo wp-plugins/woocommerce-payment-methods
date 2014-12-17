@@ -6,7 +6,7 @@
  * @subpackage	Payment Methods
  *
  * @since		2014-09-08
- * @version		2014-10-21
+ * @version		2014-12-17
  *
  * @author		Poellmann Alexander Manfred <alex@vendocr.at>
  * @copyright	Copyright 2014 vendocrat. All Rights Reserved.
@@ -51,7 +51,6 @@ class vendocrat_WC_Payment_Methods {
 
 		// load text domain
 		$this->load_plugin_textdomain();
-	//	add_action( 'plugins_loaded', array( &$this, 'load_plugin_textdomain' ) );
 
 		$this->available_methods = array(
 			'amazon'			=> 'Amazon',
@@ -66,7 +65,7 @@ class vendocrat_WC_Payment_Methods {
 			'cash-on-delivery'	=> __( 'Cash on Delivery', 'woocommerce-payment-methods' ),
 			'cb'				=> 'CB',
 			'cirrus'			=> 'Cirrus',
-			'cheque'			=> __( 'Pay with Cheque', 'woocommerce-payment-methods' ),
+		//	'cheque'			=> __( 'Pay with Cheque', 'woocommerce-payment-methods' ),
 			'clickandbuy'		=> 'ClickAndBuy',
 			'credit-card'		=> __( 'Credit Card', 'woocommerce-payment-methods' ),
 			'diners'			=> 'Diners Club',
@@ -88,6 +87,7 @@ class vendocrat_WC_Payment_Methods {
 			'ogone'				=> 'Ogone',
 			'paybox'			=> 'Paybox',
 			'paylife'			=> 'Paylife',
+			'paymill'			=> 'Paymill',
 			'paypal'			=> 'PayPal',
 			'paysafecard'		=> 'paysafecard',
 			'postepay'			=> 'postepay',
@@ -119,6 +119,7 @@ class vendocrat_WC_Payment_Methods {
 
 		// add shortcode
 		add_shortcode( 'v_woo_payment_methods', array( &$this, 'get_payment_methods' ) );
+		add_shortcode( 'wc_payment_methods',    array( &$this, 'get_payment_methods' ) );
 	}
 
 	/**
@@ -165,13 +166,8 @@ class vendocrat_WC_Payment_Methods {
 	 * @return void
 	 *
 	 * @since 2014-09-08
-	 * @version 2014-09-08
+	 * @version 2014-10-23
 	 **************************************************/
-/*
-	static function load_plugin_textdomain() {
-		load_plugin_textdomain( 'payment-methods', false, basename( $this->plugin_dir ) .'/languages/' );
-	}
-*/
 	public function load_plugin_textdomain() {
 		$locale = apply_filters( 'plugin_locale', get_locale(), 'woocommerce-payment-methods' );
 		$dir    = trailingslashit( WP_LANG_DIR );
@@ -200,7 +196,7 @@ class vendocrat_WC_Payment_Methods {
 		}
 		wp_enqueue_style( 'vendocrat-paymentfont' );
 
-		wp_register_style( 'payment-methods', WC_PAYMENT_METHODS_CSS_URI .'payment-methods.css', array(), false, 'all' );
+		wp_register_style( 'payment-methods', WC_PAYMENT_METHODS_CSS_URI .'payment-methods.min.css', array(), false, 'all' );
 		wp_enqueue_style( 'payment-methods' );
 	}
 
@@ -338,6 +334,17 @@ class vendocrat_WC_Payment_Methods {
 						$methods.= ' cheque';
 						break;
 
+					case 'paymill' :
+						$methods.= ' paymill';
+						$methods.= ' credit-card';
+						$methods.= ' visa';
+						$methods.= ' mastercard';
+						$methods.= ' american-express';
+						$methods.= ' discover';
+						$methods.= ' diners';
+						$methods.= ' jcb';
+						break;
+
 					case 'paypal' :
 						$methods.= ' credit-card';
 						$methods.= ' paypal';
@@ -362,18 +369,18 @@ class vendocrat_WC_Payment_Methods {
 					case 'wirecard' :
 						$options = get_option('woocommerce_wirecard_settings');
 
-						if ( is_array( $options['paymenttype_available'] ) ) {
+						if ( array_key_exists( 'paymenttype_available', $options ) AND is_array( $options['paymenttype_available'] ) ) {
 							$wirecard_gateways = $options['paymenttype_available'];
 						} else {
 							$wirecard_gateways = array();
 						}
 
-						if ( is_array( $options['subs_paymenttype_options'] ) ) {
+						if ( array_key_exists( 'subs_paymenttype_options', $options ) AND is_array( $options['subs_paymenttype_options'] ) ) {
 							$wirecard_gateways_subscription = $options['subs_paymenttype_options'];
 						} else {
 							$wirecard_gateways_subscription = array();
 						}
-							
+
 						$wirecard_gateways = array_merge( $wirecard_gateways, $wirecard_gateways_subscription );
 
 						if ( count($wirecard_gateways) > 0 ) {
@@ -392,6 +399,17 @@ class vendocrat_WC_Payment_Methods {
 
 									case 'idl' :
 										$methods.= ' ideal';
+										break;
+
+									case 'paymill' :
+										$methods.= ' paymill';
+										$methods.= ' credit-card';
+										$methods.= ' visa';
+										$methods.= ' mastercard';
+										$methods.= ' american-express';
+										$methods.= ' discover';
+										$methods.= ' diners';
+										$methods.= ' jcb';
 										break;
 
 									case 'paypal' :
@@ -456,7 +474,7 @@ class vendocrat_WC_Payment_Methods {
 						break;
 
 					case 'amazon' :
-					case 'amazon-fps' :
+					case 'amazon_fps' :
 						$methods.= ' amazon';
 						break;
 
