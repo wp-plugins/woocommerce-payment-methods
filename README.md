@@ -1,4 +1,4 @@
-WooCommerce Payment Methods 1.0.0
+WooCommerce Payment Methods 1.1.0
 =================================
 
 Easily display your accepted payment methods
@@ -9,7 +9,7 @@ Easily display your accepted payment methods
 
 ##Description
 
-WooCommerce Payment Methods allows you to display your accepted payment methods. By default the plugin shows all available payment methods, but you can also specify them manually.
+WooCommerce Payment Methods allows you to display your accepted payment methods. By default the plugin shows all available payment methods, but you can also specify or override them manually.
 
 You can display them via shortcode, widget or template tag in three available styles (default, inverse and outline). We've added several classes, so you can easily style the output to your pleasure.
 
@@ -21,7 +21,7 @@ This plugin uses the webfont [PaymentFont](https://github.com/vendocrat/PaymentF
 
 **Contributions**
 
-Contributions are warmly welcome via [GitHub](https://github.com/vendocrat/).
+Contributions are warmly welcome via [GitHub](https://github.com/vendocrat/WooCommerce-Payment-Methods/).
 
 **Translations**
 
@@ -30,9 +30,10 @@ Translations included:
 *   English
 *   German
 *   Italian
-*   Portuguese (thanks to [Luis Martins](https://github.com/lmartins).
+*   Greek (thanks to [Anestis Samourkasidis](https://wordpress.org/support/profile/samourkasidis))
+*   Portuguese (thanks to [Luis Martins](https://github.com/lmartins))
 
-Please contact us via [Twitter](https://twitter.com/vendocrat) or hit us on [GitHub](https://github.com/vendocrat/), if you have a translation you want to contribute!
+All our plugins are fully localized/translateable by default and include a .pot-file! Please contact us via [Twitter](https://twitter.com/vendocrat) or hit us on [GitHub](https://github.com/vendocrat), if you have a translation you want to contribute!
 
 ##Changelog
 See "readme.txt".
