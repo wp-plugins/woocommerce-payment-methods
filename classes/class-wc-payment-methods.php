@@ -2,15 +2,15 @@
 /**
  * Payment Methods
  *
- * @package		vendocrat
- * @subpackage	Payment Methods
+ * @package    vendocrat
+ * @subpackage Payment Methods
  *
- * @since		2014-09-08
- * @version		2015-04-24
+ * @since      2014-09-08
+ * @version    2015-04-24
  *
- * @author		Poellmann Alexander Manfred (@AMPoellmann)
- * @copyright	Copyright 2015 vendocrat. All Rights Reserved.
- * @link		https://vendocr.at/
+ * @author     Poellmann Alexander Manfred (@AMPoellmann)
+ * @copyright  Copyright 2015 vendocrat. All Rights Reserved.
+ * @link       https://vendocr.at/
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
@@ -316,6 +316,8 @@ class vendocrat_WC_Payment_Methods {
 	/**
 	 * Get available gateways
 	 *
+	 * @todo refactor automatic display of payment methods, eg. for PayPal & Stripe
+	 *
 	 * @since 2014-09-07
 	 * @version 2015-04-24
 	 **************************************************/
@@ -346,34 +348,34 @@ class vendocrat_WC_Payment_Methods {
 
 					case 'paymill' :
 						$methods.= ' paymill';
-						$methods.= ' credit-card';
+					/*	$methods.= ' credit-card';
 						$methods.= ' visa';
 						$methods.= ' mastercard';
 						$methods.= ' american-express';
 						$methods.= ' discover';
 						$methods.= ' diners';
-						$methods.= ' jcb';
+						$methods.= ' jcb';*/
 						break;
 
 					case 'paypal' :
-						$methods.= ' credit-card';
+					//	$methods.= ' credit-card';
 						$methods.= ' paypal';
-						$methods.= ' visa';
+					/*	$methods.= ' visa';
 						$methods.= ' mastercard';
 						$methods.= ' american-express';
 						$methods.= ' discover';
 						$methods.= ' diners';
-						$methods.= ' jcb';
+						$methods.= ' jcb';*/
 						break;
 
 					case 'stripe' :
 						$methods.= ' stripe';
-						$methods.= ' visa';
+					/*	$methods.= ' visa';
 						$methods.= ' mastercard';
 						$methods.= ' american-express';
 						$methods.= ' discover';
 						$methods.= ' diners';
-						$methods.= ' jcb';
+						$methods.= ' jcb';*/
 						break;
 
 					case 'wirecard' :
@@ -403,8 +405,8 @@ class vendocrat_WC_Payment_Methods {
 
 									case 'ccard' :
 										$methods.= ' credit-card';
-										$methods.= ' visa';
-										$methods.= ' mastercard';
+									//	$methods.= ' visa';
+									//	$methods.= ' mastercard';
 										break;
 
 									case 'idl' :
@@ -413,24 +415,24 @@ class vendocrat_WC_Payment_Methods {
 
 									case 'paymill' :
 										$methods.= ' paymill';
-										$methods.= ' credit-card';
+									/*	$methods.= ' credit-card';
 										$methods.= ' visa';
 										$methods.= ' mastercard';
 										$methods.= ' american-express';
 										$methods.= ' discover';
 										$methods.= ' diners';
-										$methods.= ' jcb';
+										$methods.= ' jcb';*/
 										break;
 
 									case 'paypal' :
-										$methods.= ' credit-card';
+									//	$methods.= ' credit-card';
 										$methods.= ' paypal';
-										$methods.= ' visa';
+									/*	$methods.= ' visa';
 										$methods.= ' mastercard';
 										$methods.= ' american-express';
 										$methods.= ' discover';
 										$methods.= ' diners';
-										$methods.= ' jcb';
+										$methods.= ' jcb';*/
 										break;
 
 									case 'pbx' :

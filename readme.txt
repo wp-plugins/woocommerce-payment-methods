@@ -4,7 +4,7 @@ Donate link:       http://vendocr.at/donate/
 Tags:              woocommerce, credit card, logo, payment
 Requires at least: 3.5
 Tested up to:      4.2
-Stable tag:        1.1.0
+Stable tag:        1.1.1
 License:           GNU General Public License v3.0
 License URI:       http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -57,25 +57,25 @@ Miss some payment methods? Let me have a look at it by opening an issue on <a hr
 
 = How to display the payment methods? =
 
-You can use the function ‘wc_payment_methods( $atts )’, the shortcode ‘[wc_payment_methods]’ or the widget.
+You can use the function 'wc_payment_methods( $atts )', the shortcode '[wc_payment_methods]' or the widget.
 
 = What function/shortcode attributes are available? =
 
-1. ‘methods’ => Comma separated list of payment methods icon slugs to be displayed, see http://paymentfont.io for available icons, defaults to false
-2. ‘style’ => How shall the icons be displayed? Available options are default, inverse and outline.
-3. ‘tooltip’ => Adds data attributes to icon to be used for diplaying tooltips (made for Bootstrap), defaults to false
-4. ‘placement’ => Set tooltip placement, defaults to bottom
-5. ‘xclass’ => Add any extra classes, seperated by a space, defaults to false
+1. 'methods' => Comma separated list of payment methods icon slugs to be displayed, see http://paymentfont.io for available icons, defaults to false
+2. 'style' => How shall the icons be displayed? Available options are default, inverse and outline.
+3. 'tooltip' => Adds data attributes to icon to be used for diplaying tooltips (made for Bootstrap), defaults to false
+4. 'placement' => Set tooltip placement, defaults to bottom
+5. 'xclass' => Add any extra classes, seperated by a space, defaults to false
 
 = How can I manually specify or override the displayed methods? =
 
-In the function and the shortcode use the attribute ‘methods’. In the widget there is a field for that. If you don't specify any methods manually, the plugin will try to fetch the available payment methods from WooCommerce. Oh, and there are also two filters available (see beneath).
+In the function and the shortcode use the attribute 'methods'. In the widget there is a field for that. If you don't specify any methods manually, the plugin will try to fetch the available payment methods from WooCommerce. Oh, and there are also two filters available (see beneath).
 
 = Are Filters/Hooks available? =
 
-Yep, there is first of all the filter ‘vendocrat_filter_wc_payment_methods’ which expects an array. Use this to specify/override the methods to be shown globally.
+Yep, there is first of all the filter 'vendocrat_filter_wc_payment_methods' which expects an array. Use this to specify/override the methods to be shown globally.
 
-With the filter ‘vendocrat_filter_wc_payment_methods_icons’ you can modify the html markup for all icons to be displayed. This will look somehow like ‘<li><i class="pf pf-paypal"></i></li><li><i class="pf pf-visa"></i></li><li><i class="pf pf-mastercard"></i></li>’ for the icons PayPal, Visa and MasterCard.
+With the filter 'vendocrat_filter_wc_payment_methods_icons' you can modify the html markup for all icons to be displayed. This will look somehow like '<li><i class="pf pf-paypal"></i></li><li><i class="pf pf-visa"></i></li><li><i class="pf pf-mastercard"></i></li>' for the icons PayPal, Visa and MasterCard.
 
 == Screenshots ==
 
